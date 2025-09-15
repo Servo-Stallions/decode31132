@@ -330,7 +330,7 @@ The readme.md file located in the [/TeamCode/src/main/java/org/firstinspires/ftc
 * The RobotDriveByGyro sample has been updated to use the new universal IMU interface.  It now supports both IMU types.
 * Removed some error-prone ElapsedTime Blocks from the Blocks editor's toolbox. This is not a
   breaking change: old Blocks OpModes that use these Blocks will still function, both in the
-  Blocks editor and at runtime.
+  Blocks editor and at Runtime.
 * Standardizes on the form "OpMode" for the term OpMode.
     * The preferred way to refer to OpModes that specifically extend `LinearOpMode` (including Blocks OpModes) is "linear OpMode".
     * The preferred way to refer to OpModes that specifically extend `OpMode` directly is "iterative OpMode".
@@ -1186,7 +1186,7 @@ Changes include:
      - Uses updated Google Blockly software to allow users to edit their OpModes on Apple iOS devices (including iPad and iPhone).
      - Improvement in Blocks tool to handle corrupt OpMode files.
      - Autonomous OpModes should no longer get switched back to tele-op after re-opening them to be edited.
-     - The system can now detect type mismatches during runtime and alert the user with a message on the Driver Station.
+     - The system can now detect type mismatches during Runtime and alert the user with a message on the Driver Station.
  * Updated javadoc documentation for setPower() method to reflect correct range of values (-1 to +1).
  * Modified VuforiaLocalizerImpl to allow for user rendering of frames
      - Added a user-overrideable onRenderFrame() method which gets called by the class's renderFrame() method.

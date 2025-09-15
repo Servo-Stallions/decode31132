@@ -96,7 +96,7 @@ public class ConceptGamepadRumble extends LinearOpMode
     boolean secondHalf = false;                 // Use to prevent multiple half-time warning rumbles.
 
     Gamepad.RumbleEffect customRumbleEffect;    // Use to build a custom rumble sequence.
-    ElapsedTime runtime = new ElapsedTime();    // Use to determine when end game is starting.
+    ElapsedTime Runtime = new ElapsedTime();    // Use to determine when end game is starting.
 
     final double HALF_TIME = 60.0;              // Wait this many seconds before rumble-alert for half-time.
     final double TRIGGER_THRESHOLD  = 0.75;     // Squeeze more than 3/4 to get rumble.
@@ -117,7 +117,7 @@ public class ConceptGamepadRumble extends LinearOpMode
         telemetry.update();
 
         waitForStart();
-        runtime.reset();    // Start game timer.
+        Runtime.reset();    // Start game timer.
 
         // Loop while monitoring buttons for rumble triggers
         while (opModeIsActive())
@@ -130,17 +130,17 @@ public class ConceptGamepadRumble extends LinearOpMode
             telemetry.addData(">", "Are we RUMBLING? %s\n", gamepad1.isRumbling() ? "YES" : "no" );
 
             // ----------------------------------------------------------------------------------------
-            // Example 1. b) Watch the runtime timer, and run the custom rumble when we hit half-time.
+            // Example 1. b) Watch the Runtime timer, and run the custom rumble when we hit half-time.
             //               Make sure we only signal once by setting "secondHalf" flag to prevent further rumbles.
             // ----------------------------------------------------------------------------------------
-            if ((runtime.seconds() > HALF_TIME) && !secondHalf)  {
+            if ((Runtime.seconds() > HALF_TIME) && !secondHalf)  {
                 gamepad1.runRumbleEffect(customRumbleEffect);
                 secondHalf =true;
             }
 
             // Display the time remaining while we are still counting down.
             if (!secondHalf) {
-                telemetry.addData(">", "Halftime Alert Countdown: %3.0f Sec \n", (HALF_TIME - runtime.seconds()) );
+                telemetry.addData(">", "Halftime Alert Countdown: %3.0f Sec \n", (HALF_TIME - Runtime.seconds()) );
             }
 
 

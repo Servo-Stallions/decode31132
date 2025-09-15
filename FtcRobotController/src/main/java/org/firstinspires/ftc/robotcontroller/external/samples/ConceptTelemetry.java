@@ -84,7 +84,7 @@ public class ConceptTelemetry extends LinearOpMode  {
 
         /* we keep track of how long it's been since the OpMode was started, just
          * to have some interesting data to show */
-        ElapsedTime opmodeRunTime = new ElapsedTime();
+        ElapsedTime opmodeRuntime = new ElapsedTime();
 
         // We show the log in oldest-to-newest order, as that's better for poetry
         telemetry.log().setDisplayOrder(Telemetry.Log.DisplayOrder.OLDEST_FIRST);
@@ -99,7 +99,7 @@ public class ConceptTelemetry extends LinearOpMode  {
          * we waited, we would just call waitForStart().
          */
         while (!isStarted()) {
-            telemetry.addData("time", "%.1f seconds", opmodeRunTime.seconds());
+            telemetry.addData("time", "%.1f seconds", opmodeRuntime.seconds());
             telemetry.update();
             idle();
         }
@@ -122,7 +122,7 @@ public class ConceptTelemetry extends LinearOpMode  {
             });
 
         // Reset to keep some timing stats for the post-'start' part of the OpMode
-        opmodeRunTime.reset();
+        opmodeRuntime.reset();
         int loopCount = 1;
 
         // Go go gadget robot!
@@ -135,7 +135,7 @@ public class ConceptTelemetry extends LinearOpMode  {
 
             // As an illustration, show some loop timing information
             telemetry.addData("loop count", loopCount);
-            telemetry.addData("ms/loop", "%.3f ms", opmodeRunTime.milliseconds() / loopCount);
+            telemetry.addData("ms/loop", "%.3f ms", opmodeRuntime.milliseconds() / loopCount);
 
             // Show joystick information as some other illustrative data
             telemetry.addLine("left joystick | ")

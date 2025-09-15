@@ -62,7 +62,7 @@ public class RobotAutoDriveByTime_Linear extends LinearOpMode {
     private DcMotor         leftDrive   = null;
     private DcMotor         rightDrive  = null;
 
-    private ElapsedTime     runtime = new ElapsedTime();
+    private ElapsedTime     Runtime = new ElapsedTime();
 
 
     static final double     FORWARD_SPEED = 0.6;
@@ -93,27 +93,27 @@ public class RobotAutoDriveByTime_Linear extends LinearOpMode {
         // Step 1:  Drive forward for 3 seconds
         leftDrive.setPower(FORWARD_SPEED);
         rightDrive.setPower(FORWARD_SPEED);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 3.0)) {
-            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", runtime.seconds());
+        Runtime.reset();
+        while (opModeIsActive() && (Runtime.seconds() < 3.0)) {
+            telemetry.addData("Path", "Leg 1: %4.1f S Elapsed", Runtime.seconds());
             telemetry.update();
         }
 
         // Step 2:  Spin right for 1.3 seconds
         leftDrive.setPower(TURN_SPEED);
         rightDrive.setPower(-TURN_SPEED);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.3)) {
-            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", runtime.seconds());
+        Runtime.reset();
+        while (opModeIsActive() && (Runtime.seconds() < 1.3)) {
+            telemetry.addData("Path", "Leg 2: %4.1f S Elapsed", Runtime.seconds());
             telemetry.update();
         }
 
         // Step 3:  Drive Backward for 1 Second
         leftDrive.setPower(-FORWARD_SPEED);
         rightDrive.setPower(-FORWARD_SPEED);
-        runtime.reset();
-        while (opModeIsActive() && (runtime.seconds() < 1.0)) {
-            telemetry.addData("Path", "Leg 3: %4.1f S Elapsed", runtime.seconds());
+        Runtime.reset();
+        while (opModeIsActive() && (Runtime.seconds() < 1.0)) {
+            telemetry.addData("Path", "Leg 3: %4.1f S Elapsed", Runtime.seconds());
             telemetry.update();
         }
 
